@@ -1,13 +1,58 @@
+@model WebApplication1.Models.Localization.IndexViewModel
+
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRUD</title>
-    <base href="/CRUD">
+    <title>@ViewBag.Title - @Model.IndexTitle</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <main></main>
+    <main>
+        <section class="row" aria-labelledby="aspnetTitle">
+            <h1 id="title">ASP.NET</h1>
+            <p class="lead">@Model.IndexWelcome</p>
+            <p>
+                <a href="https://asp.net" class="btn btn-primary btn-md">
+                    @Model.IndexLearnMore &raquo;
+                </a>
+            </p>
+        </section>
+        <div class="row">
+            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+                <h2 id="gettingStartedTitle">@Model.IndexFirstSectionTitle</h2>
+                <p>@Model.IndexFirstSectionMessage</p>
+                <p>
+                    <a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">
+                        @Model.IndexLearnMore &raquo;
+                    </a>
+                </p>
+            </section>
+            <section class="col-md-4" aria-labelledby="librariesTitle">
+                <h2 id="librariesTitle">@Model.IndexSecondSectionTitle</h2>
+                <p>@Model.IndexSecondSectionMessage</p>
+                <p>
+                    <a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">
+                        @Model.IndexLearnMore &raquo;
+                    </a>
+                </p>
+            </section>
+            <section class="col-md-4" aria-labelledby="hostingTitle">
+                <h2 id="hostingTitle">@Model.IndexThirdSectionTitle</h2>
+                <p>@Model.IndexThirdSectionMessage</p>
+                <p>
+                    <a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">
+                        @Model.IndexLearnMore &raquo;
+                    </a>
+                </p>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
