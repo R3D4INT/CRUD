@@ -1,0 +1,66 @@
+﻿@model WebApplication1.Models.Localization.CompositeViewsModels.UserCompositeViewModel
+
+@{
+    ViewBag.Title = @Model.UserViewModel.UserOperationsTitle;
+}
+
+<h2> @Model.UserViewModel.UserOperationsTitle</h2>
+
+<p>
+    @Html.ActionLink(@Model.UserViewModel.Add, "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.First().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.First().Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.First().Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.First().Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.First().Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.First().Country)
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.Name)
+            </td>
+            <td>
+                @Html.ActionLink(@Model.UserViewModel.Edit, "Edit", item)
+            </td>
+            <td>
+                @Html.ActionLink(@Model.UserViewModel.Delete, "Delete", item)
+            </td>
+        </tr>
+    }
+
+</table>
+<td>
+</td>
